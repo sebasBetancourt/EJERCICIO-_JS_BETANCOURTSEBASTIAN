@@ -1,6 +1,5 @@
+let user  = prompt("Ingresa una expresion: ")
 
-// user  = prompt("Ingresa una expresion: ")
-let user = "holaa ()[]{}"
 
 
 function diccionarioExpresiones(texto){
@@ -25,29 +24,29 @@ function diccionarioExpresiones(texto){
 
 function esEquilibrada(texto){
     let expresion = diccionarioExpresiones(texto), equilibrado = false; 
-    console.log(expresion);
     for (let char of expresion){
         if(char === ("[")){
             let posicion = expresion[(expresion.indexOf(char)) + 1];
-            console.log(posicion);
             if (posicion === "]"){
-                let equilibradoUno = true
+                var equilibradoUno = true
             }
     }else if(char === ("(")){
         let posicion = expresion[(expresion.indexOf(char)) + 1];
         console.log(posicion);
         if (posicion === "]"){
-            let equilibradoDos = true
+            var equilibradoDos = true
         }
     }else if(char === ("{")){
         let posicion = expresion[(expresion.indexOf(char)) + 1];
         console.log(posicion);
         if (posicion === "]"){
-            let equilibradoTres = false
+            var equilibradoTres = true
         }
     }
     }
-    if (equilibradoUno())
+    if ((equilibradoUno && equilibradoDos && equilibradoTres) === true){
+        equilibrado = true
+    }
     return equilibrado
 
 };
